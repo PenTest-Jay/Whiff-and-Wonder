@@ -1,0 +1,386 @@
+/* === Contact Page Styles === */
+/* Reset, variables, header, footer, and buttons live in style.css */
+
+/* === Header & Navigation === */
+header {
+    background-color: var(--color-charcoal);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav.navbar {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    margin-left: auto;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 0.5rem;
+    display: block;
+}
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-gold);
+}
+
+/* Hamburger Icon */
+.navbar-toggler {
+    border-color: var(--color-gold);
+}
+
+/* === Contact Section Wrapper === */
+.contact {
+    background-color: var(--color-cream);
+    padding: var(--section-padding) 0;
+}
+
+/* === Contact Header === */
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--color-charcoal);
+    margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* === Contact Form Card === */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-text-light);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* === Form Groups (fieldsets) === */
+.form-group {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-family: var(--font-secondary);
+    color: var(--color-charcoal);
+    font-size: 0.95rem;
+}
+
+.form-group label abbr {
+    text-decoration: none;
+    color: var(--color-gold);
+    margin-left: 2px;
+}
+
+/* === Inputs, Selects, Textarea === */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    color: var(--color-text-dark);
+    background-color: #fafafa;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.15);
+    background-color: var(--color-text-light);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-gray);
+    font-style: italic;
+}
+
+/* Select arrow */
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232C2C2C' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+/* Textarea */
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+/* === Error States === */
+.form-group.error input,
+.form-group.error textarea {
+    border-color: var(--color-error);
+}
+
+.error-message {
+    display: none;
+    color: var(--color-error);
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    font-family: var(--font-secondary);
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+/* === Submit Button === */
+.contact-form .btn-primary {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+/* === Success Banner === */
+.success-banner {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    font-family: var(--font-secondary);
+}
+
+footer {
+    background-color: var(--color-charcoal);
+    color: var(--color-text-light);
+    padding: 4rem 0 1rem;
+}
+
+/* Flexbox row — columns sit side by side */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Each column grows equally but has a min width */
+.footer-column {
+    flex: 1 1 180px;
+    /* grow | shrink | base width */
+}
+
+/* Brand column gets more base width */
+.footer-brand {
+    flex: 2 1 250px;
+}
+
+/* Newsletter column gets more base width */
+.footer-newsletter {
+    flex: 2 1 250px;
+}
+
+/* === Brand Column === */
+.footer-brand h3 {
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    color: var(--color-gold);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 1.5rem;
+}
+
+/* Social links row */
+.footer-socials {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.footer-socials a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--color-gold);
+}
+
+/* === Standard Columns === */
+.footer-column h4 {
+    color: var(--color-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--color-gold);
+}
+
+/* === Newsletter Column === */
+.footer-newsletter p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Newsletter form — stacked by default */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.newsletter-form input {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-family: var(--font-secondary);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: var(--color-text-light);
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.newsletter-form button {
+    padding: 0.75rem;
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #B89850;
+}
+
+/* === Copyright === */
+.footer-bottom {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    padding-top: 1.5rem;
+}

@@ -1,0 +1,195 @@
+/* === CSS Variables (Design Tokens) === */
+:root {
+    /* Colors */
+    --color-cream: #F5F1E8;
+    --color-charcoal: #2C2C2C;
+    --color-gold: #C9A961;
+    --color-text-dark: #1A1A1A;
+    --color-text-light: #FFFFFF;
+    --color-gray: #aaa;
+    --color-border: #D4CFC0;
+    --color-error: #D32F2F;
+    --color-success: #2E7D32;
+
+    /* Typography */
+    --font-primary: 'Cormorant Garamond', serif;
+    --font-secondary: 'Montserrat', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 5rem;
+
+    /* Layout */
+    --container-max: 1200px;
+    --section-padding: 5rem;
+    --section-padding-mobile: 2.5rem;
+}
+
+
+/* === Cart Badge (global — shown on all pages) === */
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* === Toast Notification === */
+.cart-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-charcoal);
+    color: var(--color-text-light);
+    padding: 0.875rem 1.5rem;
+    border-radius: 4px;
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    border-left: 3px solid var(--color-gold);
+}
+
+.cart-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* 
+   RESPONSIVE MEDIA QUERIES
+    These breakpoints are based on common device widths and can be adjusted as needed.  */
+/* --- TABLET (992px and below) --- */
+@media (max-width: 992px) {
+
+    /* Navbar */
+    .navbar-nav {
+        gap: 1.25rem;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    /* About — stack image above text */
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    /* Footer */
+    .footer-content {
+        gap: 1.5rem;
+    }
+}
+
+
+/* --- MOBILE (768px and below) --- */
+@media (max-width: 768px) {
+
+    /* Typography */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Section padding */
+    section {
+        padding: 3rem 0;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        margin-top: 4rem;
+    }
+
+    /* About */
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        height: 260px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    /* Footer — stack all columns */
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* --- SMALL MOBILE (480px and below) --- */
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .logo-img {
+        height: 30px;
+    }
+}

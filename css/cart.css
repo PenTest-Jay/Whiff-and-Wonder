@@ -1,0 +1,443 @@
+/* === Cart Page Styles === */
+/* Reset, variables, header, footer, and buttons live in style.css */
+
+
+/* === Header & Navigation === */
+header {
+    background-color: var(--color-charcoal);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav.navbar {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    margin-left: auto;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 0.5rem;
+    display: block;
+}
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-gold);
+}
+
+/* Hamburger Icon */
+.navbar-toggler {
+    border-color: var(--color-gold);
+}
+
+/* === Utility === */
+.hidden {
+    display: none !important;
+}
+
+/* === Cart Header === */
+.cart-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+
+.cart-header h1 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--color-charcoal);
+}
+
+/* === Cart Container (grid: table + summary) === */
+.cart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    padding-bottom: 5rem;
+}
+
+/* === Cart Items Panel === */
+.cart-items {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+/* === Cart Table === */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-secondary);
+}
+
+.cart-table thead {
+    background-color: var(--color-charcoal);
+    color: var(--color-text-light);
+}
+
+.cart-table thead th {
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.cart-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+}
+
+.cart-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.cart-table tbody td {
+    padding: 1.25rem;
+    vertical-align: middle;
+}
+
+/* === Table Cell Styles === */
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.cart-item-name {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    color: var(--color-charcoal);
+}
+
+.cart-item-qty {
+    width: 70px;
+    padding: 0.4rem 0.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.cart-item-qty:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.cart-item-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    white-space: nowrap;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+    padding: 0.25rem;
+}
+
+.remove-btn:hover {
+    color: #c0392b;
+}
+
+/* === Empty Cart === */
+.empty-cart {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 5rem;
+}
+
+.empty-cart p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* === Cart Summary (Aside) === */
+aside.cart-summary {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 100px;
+}
+
+.cart-summary h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--color-charcoal);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* === Summary List (dl/dt/dd) === */
+.summary-list {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem 1rem;
+    margin: 0 0 1rem;
+}
+
+.summary-list dt {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.summary-list dd {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    text-align: right;
+    margin: 0;
+}
+
+.summary-list dt.total,
+.summary-list dd.total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    padding-top: 0.75rem;
+    border-top: 2px solid #e0e0e0;
+    margin-top: 0.25rem;
+}
+
+.cart-summary .btn {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+footer {
+    background-color: var(--color-charcoal);
+    color: var(--color-text-light);
+    padding: 4rem 0 1rem;
+}
+
+/* Flexbox row — columns sit side by side */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Each column grows equally but has a min width */
+.footer-column {
+    flex: 1 1 180px;
+    /* grow | shrink | base width */
+}
+
+/* Brand column gets more base width */
+.footer-brand {
+    flex: 2 1 250px;
+}
+
+/* Newsletter column gets more base width */
+.footer-newsletter {
+    flex: 2 1 250px;
+}
+
+/* === Brand Column === */
+.footer-brand h3 {
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    color: var(--color-gold);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 1.5rem;
+}
+
+/* Social links row */
+.footer-socials {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.footer-socials a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--color-gold);
+}
+
+/* === Standard Columns === */
+.footer-column h4 {
+    color: var(--color-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--color-gold);
+}
+
+/* === Newsletter Column === */
+.footer-newsletter p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Newsletter form — stacked by default */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.newsletter-form input {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-family: var(--font-secondary);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: var(--color-text-light);
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.newsletter-form button {
+    padding: 0.75rem;
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #B89850;
+}
+
+/* === Copyright === */
+.footer-bottom {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    padding-top: 1.5rem;
+}
