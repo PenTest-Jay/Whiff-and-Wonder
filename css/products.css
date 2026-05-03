@@ -4,6 +4,8 @@
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    background: linear-gradient(180deg, var(--color-cream)0%, var(--color-gray)50%, var(--color-cream)100%);
+    background-size: cover;
 }
 
 header {
