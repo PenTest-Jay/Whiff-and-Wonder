@@ -284,9 +284,6 @@ function initNewsletter() {
 // === Initialize ===
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Cart badge on every page
-    updateCartBadge();
-
     // Cart page
     if (document.getElementById('cartItems')) {
         renderCart();

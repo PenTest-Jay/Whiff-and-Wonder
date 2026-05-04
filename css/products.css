@@ -96,7 +96,7 @@ nav.navbar {
 /* === Products Header === */
 .products-header {
     padding: 3rem 1rem 1.5rem;
-    background: linear-gradient(180deg, var(--color-gray)0%, var(--color-text-light)50%, var(--color-gray)100%);
+    background: linear-gradient(180deg, var(--color-gray)0%, var(--color-cream)50%, var(--color-gray)100%);
     margin: 0;
     height: 20vw;
     width: 100vw;
@@ -109,11 +109,15 @@ nav.navbar {
 
 .products-header h1 {
     font-family: var(--font-primary);
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--color-charcoal);
     letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1.5rem;
 
 }
 
@@ -124,13 +128,13 @@ nav.navbar {
 }
 
 /* === Search Bar === */
-form.search-bar {
+.search-bar {
     max-width: 440px;
     margin: 0 auto 2.5rem;
     position: relative;
 }
 
-form.search-bar::before {
+.search-bar::before {
     content: '🔍';
     position: absolute;
     left: 1.2rem;
@@ -158,7 +162,7 @@ form.search-bar::before {
 }
 
 /* === Product Grid === */
-section.product-grid {
+.product-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -169,27 +173,29 @@ section.product-grid {
 }
 
 /* === Product Card === */
-article.product-card {
-    flex: 0 0 calc(33.333% - 1.25rem);
-    max-width: 300px;
+.product-card {
+    flex: 0 0 calc(25%- 1.5rem);
+    max-width: 280px;
+    min-width: 260px;
     background: var(--color-text-light);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     border: 1px solid #ebebeb;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
 
 }
 
-article.product-card:hover {
-    transform: translateY(-6px);
+.product-card:hover {
+    transform: translateY(-8px);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-gold);
 }
 
 /* Subtle gold top border on hover */
-article.product-card::before {
+.product-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -202,7 +208,7 @@ article.product-card::before {
     transform-origin: left;
 }
 
-article.product-card:hover::before {
+.product-card:hover::before {
     transform: scaleX(1);
 }
 
@@ -215,16 +221,17 @@ article.product-card:hover::before {
     transition: transform 0.4s ease;
 }
 
-article.product-card:hover .product-image {
+.product-card:hover .product-image {
     transform: scale(1.03);
 }
 
 /* === Product Info === */
-section.product-info {
-    padding: 1rem 1rem 1.25rem;
+.product-info {
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+
 }
 
 .product-info h3 {
@@ -292,8 +299,6 @@ section.product-info {
     background-color: var(--color-gold);
     color: var(--color-charcoal);
 }
-
-
 
 
 footer {

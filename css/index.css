@@ -157,34 +157,43 @@ nav.navbar {
 .hero {
     position: relative;
     height: 100vh;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     overflow: hidden;
     background-color: var(--color-cream);
+    
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
     color: var(--color-text-dark);
     max-width: 800px;
     padding: 0 var(--spacing-md);
-    margin-top: 8rem;
+    width: 100%;
+    margin-left: 15rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero h1 {
-    color: var(--color-text-dark);
+    color: var(--color-cream) ;
     margin-bottom: 1rem;
-    font-size: 4rem;
+    font-size: 6rem;
+    font-weight: 600;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
     font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    color: var(--color-cream);
 }
 
 .hero .btn {
@@ -219,14 +228,11 @@ nav.navbar {
 }
 
 .btn-secondary {
-    background-color: transparent;
     color: var(--color-charcoal);
     border: 2px solid var(--color-charcoal);
-}
-
-.btn-secondary {
     background-color: lightgray;
 }
+
 
 .btn-secondary:hover {
     background-color: var(--color-charcoal);
@@ -236,18 +242,22 @@ nav.navbar {
 /* === Image Slider === */
 .slider {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 .slider img {
     position: absolute;
-    width: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     opacity: 0;
-    animation: slideShow 20s infinite;
-    margin-top: 0.5rem;
+    animation: slideShow 25s infinite;
 }
 
 .slider img:nth-child(1) {
@@ -271,16 +281,43 @@ nav.navbar {
 }
 
 @keyframes slideShow {
-
-    0%,
-    25% {
-        opacity: 0.6;
+    0% {
+        opacity: 0;
     }
 
-    30%,
+    5% {
+        opacity: 1;
+    }
+
+    /* Fade in */
+    20% {
+        opacity: 1;
+    }
+
+    /* Stay visible */
+    25% {
+        opacity: 0;
+    }
+
+    /* Fade out */
     100% {
         opacity: 0;
     }
+}
+
+.slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This creates the hazy cream look */
+    background-color: var(--color-charcoal);
+    opacity: 0.6;
+    /* Adjust this (0.1 to 0.6) for more or less haze */
+    z-index: 2;
+    /* Sits above the images */
 }
 
 /* === About Section === */
