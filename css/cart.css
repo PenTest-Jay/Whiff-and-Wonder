@@ -237,7 +237,7 @@ aside.cart-summary {
     top: 100px;
 }
 
-.cart-summary h3 {
+.cart-summary h2 {
     font-family: var(--font-primary);
     font-size: 1.5rem;
     color: var(--color-charcoal);
