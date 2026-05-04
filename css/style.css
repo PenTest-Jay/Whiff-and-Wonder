@@ -29,7 +29,7 @@
 }
 
 
-/* === Cart Badge (global — shown on all pages) === */
+/* Cart Badge global  */
 .cart-badge {
     position: absolute;
     top: -8px;
@@ -50,7 +50,7 @@
     pointer-events: none;
 }
 
-/* === Toast Notification === */
+/* Toast Notification for Badge */
 .cart-toast {
     position: fixed;
     bottom: 2rem;
@@ -76,10 +76,9 @@
 }
 
 
-/* 
-   RESPONSIVE MEDIA QUERIES
-    These breakpoints are based on common device widths and can be adjusted as needed.  */
-/* --- TABLET (992px and below) --- */
+/*  MEDIA QUERIES
+These breakpoints are based on common device widths and can be adjusted as needed.
+TABLET (992px and below) --- */
 @media (max-width: 992px) {
 
     /* Navbar */
@@ -113,7 +112,7 @@
 }
 
 
-/* --- MOBILE (768px and below) --- */
+/* MOBILE (768px and below) */
 @media (max-width: 768px) {
 
     /* Typography */

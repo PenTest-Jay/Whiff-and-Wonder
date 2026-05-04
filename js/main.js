@@ -22,7 +22,7 @@ function addToCart(productName, price) {
         existingItem.quantity += 1;
     } else {
         const cards = document.querySelectorAll('.product-card');
-        let image = 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=100&q=80';
+        let image = 'images/prada.jpeg';
         cards.forEach(card => {
             if (card.getAttribute('data-name') === productName) {
                 const img = card.querySelector('.product-image');
@@ -70,7 +70,7 @@ function calculateTotals() {
     };
 }
 
-// === Cart Badge ===
+// Cart Badge 
 function updateCartBadge() {
     const cart = getCart();
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -89,7 +89,7 @@ function updateCartBadge() {
     }
 }
 
-// === Toast Notification ===
+// Toast Notification 
 function showAddedToast(productName) {
     const existing = document.querySelector('.cart-toast');
     if (existing) existing.remove();
@@ -107,7 +107,7 @@ function showAddedToast(productName) {
     }, 2500);
 }
 
-// === Render Cart Table ===
+//  Cart Table 
 function renderCart() {
     const cart = getCart();
     const cartItemsBody = document.getElementById('cartItems');
@@ -158,7 +158,7 @@ function proceedToCheckout() {
     alert('Proceeding to checkout... (This is a demo)');
 }
 
-// === Contact Form Validation ===
+// Contact Form Validation 
 
 function validateFullName(name) {
     return /^[a-zA-Z\s'-]+$/.test(name) && name.trim().length > 0;
@@ -226,7 +226,7 @@ function handleNameInput(event) {
     }
 }
 
-// === Product Search ===
+// Product Search
 function handleProductSearch(event) {
     const searchTerm = event.target.value.toLowerCase().trim();
     const productCards = document.querySelectorAll('.product-card');
@@ -238,7 +238,7 @@ function handleProductSearch(event) {
     });
 }
 
-// === Newsletter Validation ===
+// Newsletter Validation
 // Uses event delegation so it works with dynamically loaded footer
 function initNewsletter() {
     document.addEventListener('submit', function (e) {
